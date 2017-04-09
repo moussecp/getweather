@@ -11,7 +11,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc // Enable Spring MVC
-@ComponentScan("com.github.moussecp.weather") // Enable component-scanning
+@ComponentScan("com.github.moussecp.weather.web") // Enable component-scanning
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     // Configure a JSP view resolver

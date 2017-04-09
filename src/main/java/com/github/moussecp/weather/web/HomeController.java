@@ -1,8 +1,12 @@
 package com.github.moussecp.weather.web;
 
+import com.github.moussecp.weather.data.LocationRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 // Declared to be a controller
 // stereotype annotation
@@ -10,14 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(value = {"/", "/homepage"})
 public class HomeController {
+    @Autowired
+    private LocationRepository locationRepository;
 
     // Handle GET requests for /
     // The value attribute specifies the request path that this method will handle,
     // and the method attribute details the HTTP method that it can handle. In this case,
     // whenever an HTTP GET request comes in for /, the home() method will be called.
     @RequestMapping(method = RequestMethod.GET)
-    public String home() {
-        return "home"; // View name is home
+    public String home(Model model) {
+        model.addAttribute("locationList", locationRepository.findAll());
+        return "home";
     }
-
 }

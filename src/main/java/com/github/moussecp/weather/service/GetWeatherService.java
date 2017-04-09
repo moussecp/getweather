@@ -1,3 +1,5 @@
+package com.github.moussecp.weather.service;
+
 import com.github.fedy2.weather.YahooWeatherService;
 import com.github.fedy2.weather.data.Channel;
 import com.github.fedy2.weather.data.unit.DegreeUnit;
@@ -8,7 +10,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class GetWeather {
+public class GetWeatherService {
 
     public static void main(String... args) {
         Map<String, Long> woeId = new HashMap<>();
@@ -28,8 +30,8 @@ public class GetWeather {
             YahooWeatherService service = new YahooWeatherService();
             Channel channel;
             Iterator it = woeId.entrySet().iterator();
-            while(it.hasNext()) {
-                Map.Entry next = (Map.Entry)it.next();
+            while (it.hasNext()) {
+                Map.Entry next = (Map.Entry) it.next();
                 channel = service.getForecast(next.getValue().toString(), DegreeUnit.CELSIUS);
 
                 System.out.println("####################################################");
