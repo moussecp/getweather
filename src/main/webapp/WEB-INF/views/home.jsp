@@ -15,9 +15,9 @@ Licence URI: http://www.os-templates.com/template-terms
 <head>
     <title>Weather</title>
     <%--<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>--%>
-    <link rel="stylesheet" href="/WEB-INF/styles/layout.css" type="text/css"/>
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css"/>
 </head>
-<body id="top">
+<body>
 <div class="wrapper col1">
     <div id="header">
         <div class="fl_left">
@@ -71,11 +71,11 @@ Licence URI: http://www.os-templates.com/template-terms
     <%--</div>--%>
     <div id="featured_intro">
         <div>
-            <p>Weather forecast for the given countries:</p>
+            <p>Weather forecast for the given locations:</p>
             <table>
                 <tr>
-                    <td>Location name</td>
-                    <td>ID</td>
+                    <th>Location name</th>
+                    <th>ID</th>
                 </tr>
                 <c:forEach var="location" items="${locationList}">
                     <tr>
@@ -85,11 +85,17 @@ Licence URI: http://www.os-templates.com/template-terms
                 </c:forEach>
             </table>
         </div>
-        <h:form action="weather" method="GET">
-            Set location id <input type="text" name="id">
+    </div>
+</div>
+<div class="wrapper col5">
+    <div>
+        <div>
+            <h:form action="weather" method="GET">
+                Set location id <input type="text" name="id">
 
-            <input type="submit" value="Submit"/>
-        </h:form>
+                <input type="submit" value="Submit"/>
+            </h:form>
+        </div>
     </div>
 </div>
 <!-- ####################################################################################################### -->
