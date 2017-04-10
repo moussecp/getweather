@@ -4,7 +4,11 @@ package com.github.moussecp.weather.data;
 import com.github.moussecp.weather.domain.Location;
 import org.springframework.stereotype.Repository;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 @Repository
 class LocationRepositoryImpl implements LocationRepository {
@@ -42,8 +46,8 @@ class LocationRepositoryImpl implements LocationRepository {
     @Override
     public Location find(Long id) {
         Location foundLocation = null;
-        for(Location location: locationsTable) {
-            if(location.getId().equals(id))
+        for (Location location : locationsTable) {
+            if (location.getId().equals(id))
                 foundLocation = location;
         }
         return foundLocation;

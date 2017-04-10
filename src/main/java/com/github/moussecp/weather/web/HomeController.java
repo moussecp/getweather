@@ -6,13 +6,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 // Declared to be a controller
 // stereotype annotation
 // component scanner will automatically pick up HomeController and declare it as a bean in the Spring application context
 @Controller
-@RequestMapping(value = {"/", "/homepage"})
+@RequestMapping(value = {"/", "/home"})
 public class HomeController {
     @Autowired
     private LocationRepository locationRepository;

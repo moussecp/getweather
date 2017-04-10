@@ -3,19 +3,19 @@ package com.github.moussecp.weather.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class HermesWebAppInitializer
-        extends AbstractAnnotationConfigDispatcherServletInitializer {
+    extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     //the configuration classes for the root application context
     protected Class<?>[] getRootConfigClasses() {
-        return new Class<?>[] {RootConfig.class};
+        return new Class<?>[]{RootConfig.class};
     }
 
     //the configuration classes for the dispatcher servlet application context
     protected Class<?>[] getServletConfigClasses() {
-        return new Class<?>[] {WebConfig.class};
+        return new Class<?>[]{WebConfig.class};
     }
 
     protected String[] getServletMappings() {
-        return new String[] {"/"};
+        return new String[]{"/"};
     }
 }
